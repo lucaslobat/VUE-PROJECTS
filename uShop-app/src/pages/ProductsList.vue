@@ -1,7 +1,7 @@
 <template>
   <section>
     <ul>
-      <ProductItem v-for="prod in products" :key="prod.id" :id="prod.id" :title="prod.title" :image="prod.image"
+      <ProductItem v-for="prod in productsGetter" :key="prod.id" :id="prod.id" :title="prod.title" :image="prod.image"
         :description="prod.description" :price="prod.price"></ProductItem>
     </ul>
   </section>
@@ -11,10 +11,15 @@
 import ProductItem from '../components/products/ProductItem.vue';
 
 export default {
-  inject: ['products'],
   components: {
     ProductItem,
   },
+
+  computed: {
+    productsGetter() {
+      return this.$store.getters.productsGetter;
+    }
+  }
 };
 </script>
 

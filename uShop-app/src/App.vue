@@ -56,32 +56,6 @@ export default {
     };
   },
   methods: {
-    addProductToCart(productData) {
-      // Check if the added item already exists in the shopping cart. 
-      const productInCartIndex = this.cart.items.findIndex(
-        (ci) => ci.productId === productData.id
-      );
-
-      //If the item exists, when added again, it will increase its quantity in the shopping cart.
-      if (productInCartIndex >= 0) {
-        this.cart.items[productInCartIndex].qty++;
-
-        /*  If the item doesn't exist, it creates a new object, populates it with the received productData parameter, 
-        add the quantity property and includes it on the cart items array */
-      } else {
-        const newItem = {
-          ...productData,
-          qty: 1,
-        };
-        this.cart.items.push(newItem);
-      }
-
-      /* Finally, when adding a new product, the cart quantity property will increase
-      and the product's price will be sumed to the cart's total  */
-      this.cart.qty++;
-      this.cart.total += productData.price;
-    },
-
     removeProductFromCart(prodId) {
       const productInCartIndex = this.cart.items.findIndex(
         (cartItem) => cartItem.productId === prodId
