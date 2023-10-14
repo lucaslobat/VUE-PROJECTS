@@ -53,6 +53,18 @@ const store = createStore({
     productsGetter(state) {
       return state.products;
     },
+    cartGetter(state) {
+      return state.cart;
+    },
+    cartTotalGetter(state) {
+      return state.cart.total.toFixed(2);
+    },
+    cartQuantityGetter(state) {
+      return state.cart.qty;
+    },
+    isLoggedInGetter(state) {
+      return state.isLoggedIn;
+    },
   },
 
   /* Mutations */
@@ -62,13 +74,13 @@ const store = createStore({
       const cartState = state.cart;
 
       // Check if the added item already exists in the shopping cart.
-      const productInCartIndex = cartState.items.findIndex(
+      const identifiedProductIndex = cartState.items.findIndex(
         (cartItem) => cartItem.id === payload.id
       );
 
-      //If the item exists, when added again, it will increase its quantity in the shopping cart.
-      if (productInCartIndex >= 0) {
-        cartState.items[productInCartIndex].qty++;
+      //If the item exists, it will increase its quantity in the shopping cart when added again.
+      if (identifiedProductIndex >= 0) {
+        cartState.items[identifiedProductIndex].qty++;
 
         /*  If the item doesn't exist, it creates a new object, populates it with the received payload parameter, 
           add the quantity property and includes it on the cart items array */
@@ -84,6 +96,19 @@ const store = createStore({
         and the product's price will be sumed to the cart's total  */
       cartState.qty++;
       cartState.total += payload.price;
+    },
+    removeProductFromCart(state, payload) {
+      const cartState = state.cart;
+
+      const identifiedProductIndex = cartState.items.findIndex(
+        (cartItem) => cartItem.id === payload.id
+      );
+
+      const prodData = cartState.items[identifiedProductIndex];
+
+      cartState.items.splice(identifiedProductIndex, 1);
+      cartState.qty -= prodData.qty;
+      cartState.total -= prodData.price * prodData.qty;
     },
   },
 });
