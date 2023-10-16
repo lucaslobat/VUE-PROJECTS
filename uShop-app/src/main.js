@@ -12,11 +12,18 @@ import BaseBadge from "./components/ui/BaseBadge.vue";
 const app = createApp(App);
 app.component("base-badge", BaseBadge);
 
-/* Store definition */
-const store = createStore({
-  /* State */
+/* Modules */
+const authentication = {
+  state: { isLoggedIn: false },
+  getters: {
+    isLoggedInGetter(state) {
+      return state.isLoggedIn;
+    },
+  },
+};
+
+const products = {
   state: {
-    isLoggedIn: false,
     products: [
       {
         id: "p1",
@@ -45,14 +52,18 @@ const store = createStore({
         price: 6.99,
       },
     ],
-    cart: { items: [], total: 0, qty: 0 },
   },
-
-  /* Getters */
   getters: {
     productsGetter(state) {
       return state.products;
     },
+  },
+};
+const cart = {
+  state: {
+    cart: { items: [], total: 0, qty: 0 },
+  },
+  getters: {
     cartGetter(state) {
       return state.cart;
     },
@@ -62,12 +73,7 @@ const store = createStore({
     cartQuantityGetter(state) {
       return state.cart.qty;
     },
-    isLoggedInGetter(state) {
-      return state.isLoggedIn;
-    },
   },
-
-  /* Mutations */
   mutations: {
     addProductToCart(state, payload) {
       const productsState = state.products;
@@ -98,18 +104,37 @@ const store = createStore({
       cartState.total += payload.price;
     },
     removeProductFromCart(state, payload) {
+      // Store the cart state
       const cartState = state.cart;
 
+      /* Stores the INDEX of the cart state element 'id' that corresponds
+       to the provided 'id' property in the payload. */
       const identifiedProductIndex = cartState.items.findIndex(
         (cartItem) => cartItem.id === payload.id
       );
 
-      const prodData = cartState.items[identifiedProductIndex];
+      /* Stores the whole object base on the index */
+      const productElement = cartState.items[identifiedProductIndex];
 
+      /* Remove the identified element from
+       the cart state based on it's index */
       cartState.items.splice(identifiedProductIndex, 1);
-      cartState.qty -= prodData.qty;
-      cartState.total -= prodData.price * prodData.qty;
+
+      /* Subtract the 'qty' property of the 'productElement' from the cart state */
+      cartState.qty -= productElement.qty;
+
+      /* Calcula the total amount of the product based on its 'qty' and 'price' properties and subtract it from the carts 'total' */
+      cartState.total -= productElement.price * productElement.qty;
     },
+  },
+};
+
+/* Store definition */
+const store = createStore({
+  modules: {
+    authentication: authentication,
+    products: products,
+    cart: cart,
   },
 });
 
