@@ -1,9 +1,9 @@
 import { createApp } from "vue";
 
 import App from "./App.vue";
-import store from "./store/storeIndex.js"
+import storeIndex from "./store/storeIndex.js"
 
 const app = createApp(App);
 
-app.use(store);
+app.use(storeIndex);
 app.mount("#app");
