@@ -1,9 +1,19 @@
-import { createApp,  } from "vue";
-import { createRouter, createWebHistory} from 'vue-router';
+/* Methods */
+import { createApp } from "vue";
 
+/* Components */
 import App from "./App.vue";
-import storeIndex from "./store/storeIndex.js"
+
+/* Store */
+import storeIndex from "./store/storeIndex.js";
+
+/* Router */
+import router from "./routing/router.js";
+
+import styles from "../src/styles.css?inline";
 
 const app = createApp(App);
+
+app.use(router);
 app.use(storeIndex);
 app.mount("#app");

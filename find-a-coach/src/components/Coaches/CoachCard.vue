@@ -10,6 +10,7 @@
         <div class="technologies">
             {{ techs }}
         </div>
+        <RouterLink to="">See details</RouterLink>
     </div>
 </template>
 <script>

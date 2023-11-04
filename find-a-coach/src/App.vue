@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <CoachList></CoachList>
+  <RouterView></RouterView>
 </template>
 
 <script>

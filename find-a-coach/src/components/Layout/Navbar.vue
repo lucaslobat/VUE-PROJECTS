@@ -3,8 +3,12 @@
         <div class="container">
             <a href="#" class="logo">Find a dev coach</a>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Coaches</a></li>
+                <li>
+                    <RouterLink to="/">Home</RouterLink>
+                </li>
+                <li>
+                    <RouterLink to="/coaches">Coaches</RouterLink>
+                </li>
                 <li><a href="#">Requests</a></li>
             </ul>
         </div>
@@ -53,5 +57,4 @@
 
 .nav-links a:hover {
     color: #55a7e7;
-}
-</style>
+}</style>
