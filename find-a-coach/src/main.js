@@ -10,7 +10,7 @@ import storeIndex from "./store/storeIndex.js";
 /* Router */
 import router from "./routing/router.js";
 
-import styles from "../src/styles.css?inline";
+import styles from "../src/styles.css";
 
 const app = createApp(App);
 

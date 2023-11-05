@@ -1,14 +1,18 @@
 <template>
+    <section>Filter</section>
     <div>
-        <CoachCard v-for="coach in getAllCoaches" :key="coach.id" :fName="coach.firstName" :lName="coach.lastName"
-            :bio="coach.biography" :rate="coach.rate" :techs="coach.technologies" />
+        <RouterLink to="/register" class="button">Register new coach</RouterLink>
+    </div>
+    <div>
+        <CoachDetail v-for="coach in getAllCoaches" :key="coach.id" :id="coach.id" :firstName="coach.firstName"
+            :lastName="coach.lastName" :biography="coach.biography" :rate="coach.rate" :technologies="coach.technologies" />
     </div>
 </template>
 
 <script>
-import CoachCard from './CoachCard.vue';
+import CoachDetail from './CoachDetail.vue';
 export default {
-    components: { CoachCard },
+    components: { CoachDetail },
     computed: {
         getAllCoaches() {
             return this.$store.getters['coachModule/getAllCoaches']
@@ -17,4 +21,27 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+a:visited {
+    color: inherit;
+
+}
+
+a,
+u {
+    text-decoration: none;
+}
+.button {
+    background: #FF5A5F;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background: #E74B4E;
+    transform: scale(1.05);
+}
+</style>

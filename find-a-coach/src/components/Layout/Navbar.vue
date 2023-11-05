@@ -1,17 +1,19 @@
 <template>
     <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Find a dev coach</a>
-            <ul class="nav-links">
-                <li>
-                    <RouterLink to="/">Home</RouterLink>
-                </li>
-                <li>
-                    <RouterLink to="/coaches">Coaches</RouterLink>
-                </li>
-                <li><a href="#">Requests</a></li>
-            </ul>
+        <div class="navbar-logo">
+            <a href="#">urCoach</a>
         </div>
+        <ul class="navbar-links">
+            <li>
+                <RouterLink to="/">Home</RouterLink>
+            </li>
+            <li>
+                <RouterLink to="/coaches">Coaches</RouterLink>
+            </li>
+            <li>
+                <RouterLink to="/requests">Requests</RouterLink>
+            </li>
+        </ul>
     </nav>
 </template>
 <script></script>
@@ -21,40 +23,38 @@
 }
 
 .navbar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.5rem;
 }
 
-.logo {
-    font-size: 24px;
+.navbar-logo a {
+    font-size: 1.5em;
     text-decoration: none;
-    color: #fff;
+    color: #FF5A5F;
+    font-weight: bold;
 }
 
-.nav-links {
+.navbar-links {
     list-style: none;
+    display: flex;
 }
 
-.nav-links li {
-    display: inline;
+.navbar-links li {
     margin-right: 20px;
 }
 
-.nav-links a {
+.navbar-links a {
     text-decoration: none;
-    color: #fff;
-    transition: color 0.3s;
+    color: #333;
+    font-weight: 500;
 }
 
-.nav-links a:hover {
-    color: #55a7e7;
+a:active,
+a.router-link-active,
+.navbar-links a:hover {
+    color: #FF5A5F;
 }</style>

@@ -1,30 +1,34 @@
 <template>
     <div class="card">
-        <div class="name">{{ `${lName}, ${fName}` }}</div>
+        <div class="name">{{ `${lastName}, ${firstName}` }}</div>
         <div class="biography">
-            {{ bio }}
+            {{ biography }}
         </div>
         <div class="rate">
             {{ `Rate: €${rate}/hour` }}
         </div>
         <div class="technologies">
-            {{ techs }}
+            {{ technologies }}
         </div>
-        <RouterLink to="">See details</RouterLink>
+        <RouterLink :to='`/coaches/${id}/contact`'>Contact</RouterLink>
     </div>
 </template>
 <script>
 export default {
-    props: ['fName', 'lName', 'bio', 'rate', 'techs']
+    props: ['id', 'firstName', 'lastName', 'biography', 'rate', 'technologies'],
+    computed: {
+        getAllCoaches() {
+            return this.$store.getters['coachModule/getAllCoaches']
+        }
+    }
 }
 </script>
 <style scoped>
 .card {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
     padding: 20px;
-    width: 300px;
+    width: 25rem;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
@@ -42,7 +46,7 @@ export default {
 
 .rate {
     font-size: 18px;
-    color: #0077b6;
+    color: #FF5A5F;
     margin-bottom: 10px;
 }
 
