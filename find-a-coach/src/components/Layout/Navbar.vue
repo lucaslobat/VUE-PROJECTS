@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar">
         <div class="navbar-logo">
-            <a href="#">urCoach</a>
+            <RouterLink to="/">urCoach</RouterLink>
         </div>
         <ul class="navbar-links">
             <li>

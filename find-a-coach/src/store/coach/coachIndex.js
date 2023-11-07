@@ -1,4 +1,6 @@
 import coachGetters from "./coachGetters.js";
+import coachMutations from "./coachMutations.js";
+import coachActions from "./coachActions.js";
 
 const coachModule = {
   namespaced: true,
@@ -23,6 +25,8 @@ const coachModule = {
     ],
   },
   getters: coachGetters,
+  mutations: coachMutations,
+  actions: coachActions
 };
 
 export default coachModule;

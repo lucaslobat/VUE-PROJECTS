@@ -19,7 +19,7 @@ const router = createRouter({
     {
       path: "/coaches/:id",
       component: CoachDetail,
-      children: [{ path: "contact", component: RequestForm }],
+      children: [{ path: "contact", component: RequestForm }], /* /coaches/id/contact */
     },
     { path: "/register", component: CoachRegistration },
     { path: "/requests", component: RequestList },
@@ -28,3 +28,4 @@ const router = createRouter({
 });
 
 export default router;
+ 

@@ -3,6 +3,8 @@ import { createApp } from "vue";
 
 /* Components */
 import App from "./App.vue";
+import BaseCard from "./components/UI/BaseCard.vue";
+import BaseButton from "./components/UI/BaseButton.vue";
 
 /* Store */
 import storeIndex from "./store/storeIndex.js";
@@ -13,7 +15,8 @@ import router from "./routing/router.js";
 import styles from "../src/styles.css";
 
 const app = createApp(App);
-
+app.component("BaseCard", BaseCard);
+app.component("BaseButton", BaseButton);
 app.use(router);
 app.use(storeIndex);
 app.mount("#app");
