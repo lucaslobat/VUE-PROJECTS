@@ -2,7 +2,7 @@
     <BaseCard>Filter</BaseCard>
     <BaseCard>
         <div>
-            <BaseButton classToApply="styled-button" toProp="/home">Refresh
+            <BaseButton classToApply="styled-button" toProp="/home. An>Refresh
             </BaseButton>
             <BaseButton isRouterLink class="styled-button" toProp="/register">Register new coach</BaseButton>
         </div>
