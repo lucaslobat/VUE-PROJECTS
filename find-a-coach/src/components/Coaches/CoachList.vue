@@ -1,12 +1,13 @@
 <template>
-    <BaseCard>Filter</BaseCard>
-    <BaseCard>
-        <div>
-            <BaseButton classToApply="styled-button" toProp="/home. An>Refresh
+    <BaseCard baseCardStyle="card-container">Filter</BaseCard>
+    <BaseCard baseCardStyle="card-container">
+        <BaseCard baseCardStyle="card-container controls">
+            <BaseButton classToApply="styled-button" toProp="/home">Refresh
             </BaseButton>
-            <BaseButton isRouterLink class="styled-button" toProp="/register">Register new coach</BaseButton>
-        </div>
-        <div v-if="hasCoaches">
+            <BaseButton classToApply="styled-button" toProp="/register" isRouterLink>Register new coach
+            </BaseButton>
+        </BaseCard>
+        <div class="coachItems" v-if="hasCoaches">
             <CoachItem v-for="coach in getAllCoaches" :key="coach.id" :id="coach.id" :firstName="coach.firstName"
                 :lastName="coach.lastName" :biography="coach.biography" :rate="coach.rate"
                 :technologies="coach.technologies" />
@@ -31,9 +32,15 @@ export default {
 </script>
 
 <style scoped>
-.card {
+.card-container {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    max-width: 70%;
+}
+.controls {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 50rem;
 }
 </style>

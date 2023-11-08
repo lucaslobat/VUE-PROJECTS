@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <BaseCard baseCardStyle="card-item">
         <div class="name">{{ `${lastName}, ${firstName}` }}</div>
         <div class="biography">
             {{ biography }}
@@ -8,16 +8,20 @@
             {{ `Rate: €${rate}/hour` }}
         </div>
         <div class="technologies">
-            {{ technologies }}
+            <BaseBadge v-for="technology in technologies" :badgeText="technology">
+            </BaseBadge>
         </div>
-        <BaseButton :toProp='seeDetailsLink' classToApply="styled-button" isRouterLink>See details</BaseButton>
-        <BaseButton :toProp='contactCoachLink' classToApply="styled-button" isRouterLink>Contact coach</BaseButton>
-    </div>
+        <div class="controls">
+            <BaseButton :toProp='seeDetailsLink' classToApply="styled-button" isRouterLink>See details</BaseButton>
+            <BaseButton :toProp='contactCoachLink' classToApply="styled-button" isRouterLink>Contact coach</BaseButton>
+        </div>
+    </BaseCard>
 </template>
 <script>
+import BaseBadge from '../UI/BaseBadge.vue';
+
 
 export default {
-
     props: ['id', 'firstName', 'lastName', 'biography', 'rate', 'technologies'],
     computed: {
         /* Grab the current route and concatenate another route, in case we ever change the defined route in our router.js file */
@@ -27,17 +31,16 @@ export default {
         contactCoachLink() {
             return `${this.$route.path}/${this.id}/contact`;
         },
-    }
+    },
+    components: { BaseBadge }
 }
 </script>
 
 <style scoped>
-.card {
-    background-color: #fff;
-    padding: 20px;
-    width: 25rem;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+.card-item {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .name {
@@ -59,5 +62,9 @@ export default {
 
 .technologies {
     font-size: 1rem;
+}
+
+.controls {
+    margin: 1rem 0;
 }
 </style>
