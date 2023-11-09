@@ -1,9 +1,6 @@
 <template>
     <BaseCard baseCardStyle="card-item">
         <div class="name">{{ `${lastName}, ${firstName}` }}</div>
-        <div class="biography">
-            {{ biography }}
-        </div>
         <div class="rate">
             {{ `Rate: €${rate}/hour` }}
         </div>
