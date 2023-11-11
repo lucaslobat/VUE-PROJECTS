@@ -1,6 +1,5 @@
 <template>
     <BaseCard baseCardStyle="card-container">
-
         <div class="name">{{ fullName }}</div>
         <div class="technologies">
             <BaseBadge v-for="technology in technologies" :badgeText="technology"></BaseBadge>
@@ -11,8 +10,7 @@
         <div>
             <BaseButton classToApply="styled-button" :toProp="contactLink" isRouterLink>Contact</BaseButton>
         </div>
-
-
+        <RouterView></RouterView>
     </BaseCard>
 </template>
 <script>
@@ -42,10 +40,12 @@ export default {
 
     },
     created() {
+        // Store all coaches
         const allCoaches = this.$store.getters['coachModule/getAllCoaches'];
+        // User the method find() on the allCoaches array and find the coach that matches the id
         const identifiedCoach = allCoaches.find(coach => coach.id == this.id);
+        // Define the local variable "identifiedCoach" as the found coach.
         this.fetchedCoach = identifiedCoach;
-        console.log(this.fetchedCoach)
     }
 }
 </script>
@@ -54,7 +54,7 @@ export default {
     flex-direction: column;
     gap: 0.5rem;
     max-width: 40rem;
-    padding:2rem;
+    padding: 2rem;
 }
 
 .name {

@@ -3,15 +3,15 @@
         <h1>Request Form</h1>
         <form>
             <div class="form-group">
-                <label for="requester-name">Your Name</label>
+                <label for="requester-name">Name</label>
                 <input type="text" id="requester-name" name="requester-name" required>
             </div>
             <div class="form-group">
-                <label for="request-type">Request Type</label>
-                <input type="text" id="request-type" name="request-type" required>
+                <label for="request-email">Email</label>
+                <input type="email" id="request-email" name="request-email" required>
             </div>
             <div class="form-group">
-                <label for="request-description">Request Description</label>
+                <label for="request-description">Description</label>
                 <textarea id="request-description" name="request-description" required></textarea>
             </div>
             <button class="btn" type="submit">Submit Request</button>

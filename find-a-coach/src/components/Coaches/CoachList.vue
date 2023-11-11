@@ -1,14 +1,15 @@
 <template>
-    <BaseCard baseCardStyle="card-container">Filter</BaseCard>
+    <!-- Documentar esto -->
+    <CoachFilter @selectedCheckboxes="filterByAreas"></CoachFilter>
+    <BaseCard baseCardStyle="card-container controls">
+        <BaseButton classToApply="styled-button" toProp="/home">Refresh
+        </BaseButton>
+        <BaseButton classToApply="styled-button" toProp="/register" isRouterLink>Register new coach
+        </BaseButton>
+    </BaseCard>
     <BaseCard baseCardStyle="card-container">
-        <BaseCard baseCardStyle="card-container controls">
-            <BaseButton classToApply="styled-button" toProp="/home">Refresh
-            </BaseButton>
-            <BaseButton classToApply="styled-button" toProp="/register" isRouterLink>Register new coach
-            </BaseButton>
-        </BaseCard>
         <div class="coachItems" v-if="hasCoaches">
-            <CoachItem v-for="coach in getAllCoaches" :key="coach.id" :id="coach.id" :firstName="coach.firstName"
+            <CoachItem v-for="coach in filteredCoaches" :key="coach.id" :id="coach.id" :firstName="coach.firstName"
                 :lastName="coach.lastName" :biography="coach.biography" :rate="coach.rate"
                 :technologies="coach.technologies" />
         </div>
@@ -18,17 +19,45 @@
 
 <script>
 import CoachItem from './CoachItem.vue'
+import CoachFilter from './CoachFilter.vue'
 export default {
-    components: { CoachItem },
+
+    data() {
+        return {
+            //Documentar esto
+            activeFilters: [],
+            hola: undefined
+
+        }
+    },
+    components: { CoachItem, CoachFilter },
     computed: {
         getAllCoaches() {
             return this.$store.getters['coachModule/getAllCoaches']
         },
         hasCoaches() {
             return this.$store.getters['coachModule/hasCoaches']
+        },
+
+        //Documentar esto
+        filteredCoaches() {
+            const allCoaches = this.$store.getters['coachModule/getAllCoaches'];
+            return allCoaches.filter(coach => {
+                if (coach.areas.includes(...this.activeFilters)) {
+                    return true;
+                } else {
+                    return false
+                }
+            })
         }
+    },
+    methods: {
+        filterByAreas(checkedOptions) {
+            this.activeFilters = checkedOptions;
+        },
     }
 }
+
 </script>
 
 <style scoped>
@@ -38,9 +67,10 @@ export default {
     gap: 1rem;
     max-width: 70%;
 }
+
 .controls {
     flex-direction: row;
     justify-content: space-between;
-    max-width: 50rem;
+    max-width: 70%;
 }
 </style>

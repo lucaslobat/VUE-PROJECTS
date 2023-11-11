@@ -13,6 +13,7 @@ const coachModule = {
         biography: "Hola, me llamo Julian y enseño desarrollo Frontend",
         rate: 15,
         technologies: ["Vue", "Javascript", "HTML", "CSS"],
+        areas:['frontend']
       },
       {
         id: 2,
@@ -21,6 +22,7 @@ const coachModule = {
         biography: "Hello, I teach backend development",
         rate: 10,
         technologies: ["C#", ".NET"],
+        areas:['backend']
       },
     ],
   },
