@@ -1,5 +1,20 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+/* Built-in Methods */
+import { createApp } from "vue";
 
-createApp(App).mount('#app')
+/* Components */
+import App from "./App.vue";
+
+/* Store */
+import mainStore from "./Vuex-store/main-store";
+
+/* Router */
+import router from "./Routes/router.js";
+
+/* Styles */
+import "./style.css";
+
+const app = createApp(App);
+
+app.use(mainStore);
+app.use(router);
+app.mount("#app");
