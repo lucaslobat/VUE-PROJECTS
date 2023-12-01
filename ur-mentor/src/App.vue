@@ -1,10 +1,13 @@
-<script>
-
-</script>
-
 <template>
-
+  <Navbar></Navbar>
+  <RouterView></RouterView>
 </template>
 
-<style scoped>
-</style>
+<script>
+import Navbar from "./components/Layout/Navbar.vue";
+export default {
+  components: { Navbar },
+};
+</script>
+
+<style scoped></style>

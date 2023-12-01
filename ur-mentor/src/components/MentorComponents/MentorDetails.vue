@@ -1,5 +1,5 @@
 <template>
-    <h1>Mentors List</h1>
+    <RouterView></RouterView>
 </template>
 <script></script>
 <style scoped></style>
