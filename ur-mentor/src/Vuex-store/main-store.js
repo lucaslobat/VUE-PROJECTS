@@ -1,4 +1,3 @@
-/* Import createStore method */
 import { createStore } from "vuex";
 
 /* Modules imports */
