@@ -26,13 +26,13 @@ export default {
 </script>
 <style scoped>
 .card-container {
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   gap: 1rem;
+  width:70vw;
 }
 
 .card-container > * {
   flex: 1;
-  min-width: 30%;
+  min-width:25%;
 }
 </style>
