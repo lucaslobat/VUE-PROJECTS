@@ -2,6 +2,7 @@
   <BaseCard customClass="card-container">
     <MentorItem
       v-for="mentor in getAllMentors"
+      :id="mentor.id"
       :key="mentor.id"
       :firstName="mentor.firstName"
       :lastName="mentor.lastName"
@@ -28,11 +29,11 @@ export default {
 .card-container {
   justify-content: center;
   gap: 1rem;
-  width:70vw;
+  width: 80vw;
 }
 
 .card-container > * {
   flex: 1;
-  min-width:25%;
+  min-width: 25%;
 }
 </style>

@@ -11,10 +11,10 @@ const router = createRouter({
     { path: "/", redirect: "/mentors" },
     { path: "/mentors", component: MentorList },
     {
-      path: "/mentors:id",
+      path: "/mentors/:id",
       component: MentorDetails,
       children: [
-        { path: "/contact", component: MentorContactForm }
+        { path: "contact", component: MentorContactForm }
       ],
     },
     {path:"/requests", component: RequestList}
