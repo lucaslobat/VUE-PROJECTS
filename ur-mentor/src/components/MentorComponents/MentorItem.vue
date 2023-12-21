@@ -1,5 +1,5 @@
 <template>
-  <BaseCard customClass="card-item">
+  <BaseContainer customClass="card-item">
     <div class="name">{{ `${firstName} ${lastName}` }}</div>
     <div class="rate">{{ rate }}€ / hour</div>
     <div class="technologies">{{ technologies }}</div>
@@ -12,7 +12,7 @@
         >Contact</BaseButton
       >
     </div>
-  </BaseCard>
+  </BaseContainer>
 </template>
 
 <script>
@@ -33,6 +33,7 @@ export default {
 .card-item {
   flex-direction: column;
   gap: 0.5rem;
+  max-width:30rem;
 }
 
 .name {
@@ -49,7 +50,8 @@ export default {
 
 .rate {
   font-size: 18px;
-  color: #8b6212;
+  color: #FF9F1C;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 

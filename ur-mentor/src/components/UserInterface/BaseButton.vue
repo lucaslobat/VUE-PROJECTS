@@ -30,8 +30,8 @@ export default {
 </script>
 <style scoped>
 .styled-button {
-  background:  #595f39;
-  color: #E4E4DE;
+  background:  #E4E4DE;
+  color: #1B1B1B;
   border: none;
   padding: 0.5rem;
   cursor: pointer;
@@ -41,7 +41,7 @@ export default {
 }
 
 .styled-button:hover {
-  background: #E4E4DE;
-  color: #595f39;
+  background: #FF9F1C;
+  color: #1B1B1B;
 }
 </style>

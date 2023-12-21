@@ -3,7 +3,7 @@ import { createApp } from "vue";
 
 /* Components */
 import App from "./App.vue";
-import BaseCard from "./components/UserInterface/BaseCard.vue";
+import BaseContainer from "./components/UserInterface/BaseContainer.vue";
 import BaseButton from "./components/UserInterface/BaseButton.vue";
 import BaseBadge from "./components/UserInterface/BaseBadge.vue";
 
@@ -18,7 +18,7 @@ import "./style.css";
 
 const app = createApp(App);
 
-app.component("BaseCard", BaseCard);
+app.component("BaseContainer", BaseContainer);
 app.component("BaseButton", BaseButton);
 app.component("BaseBadge", BaseBadge);
 

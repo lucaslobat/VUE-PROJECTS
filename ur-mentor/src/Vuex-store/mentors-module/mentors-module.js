@@ -37,6 +37,16 @@ const mentorStore = {
         rate: 25,
         technologies: ["Vue.js", "Javascript", "HTML", "CSS","C#", ".NET"],
         areas: ["backend","frontend"]
+      },
+      {
+        id: 4,
+        firstName: "Lucas",
+        lastName: "Lobato",
+        biography:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.",
+        rate: 25,
+        technologies: ["Vue.js", "Javascript", "HTML", "CSS","C#", ".NET"],
+        areas: ["backend","frontend"]
       }
     ],
   },

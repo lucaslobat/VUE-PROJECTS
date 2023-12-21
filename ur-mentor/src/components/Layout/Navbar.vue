@@ -18,10 +18,6 @@
 </template>
 <script></script>
 <style scoped>
-* {
-  font-family: "Libre Baskerville", serif;
-}
-
 .navbar {
   background-color: #1b1b1b;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -56,6 +52,6 @@
 a:active,
 a.router-link-active,
 .navbar-links a:hover {
-  color: #C4C5BA;
+  color: #FF9F1C;
 }
 </style>
