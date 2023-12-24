@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="navbar-logo">
-      <RouterLink to="/">urCoach</RouterLink>
+      <RouterLink to="/">urMentor</RouterLink>
     </div>
     <ul class="navbar-links">
       <li>
@@ -25,6 +25,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
+  width:100%
 }
 
 .navbar-logo a {

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-content">
         <div>
-          <p>&copy; 2023 Your Company. All rights reserved.</p>
+          <p>&copy; 2023 urMentor. All rights reserved.</p>
         </div>
         <div>
           <ul class="social-icons">
@@ -29,11 +29,6 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .footer-content {

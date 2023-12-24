@@ -1,17 +1,9 @@
 <template>
-  <!-- Menu -->
-  <BaseContainer customClass="card-container menu">
-    <section>
-      <BaseButton :isRouterLink="false" customClass="styled-button">Filter</BaseButton>
-    </section>
-    <section class="controls flex">
-      <BaseButton :isRouterLink="false" customClass="styled-button">Refresh</BaseButton>
-      <BaseButton isRouterLink customClass="styled-button" to="/registration">Register as a mentor </BaseButton>
-    </section>
-  </BaseContainer>
+  <!-- Control Bar -->
+  <MentorsControlBar/>
 
   <!-- MentorItems list -->
-  <BaseContainer customClass="card-container">
+  <BaseContainer v-if="hasMentors" customClass="card-container mentors-list">
     <MentorItem
       v-for="mentor in getAllMentors"
       :id="mentor.id"
@@ -24,47 +16,38 @@
       :areas="mentor.areas"
     ></MentorItem>
   </BaseContainer>
+
+  <!-- If no mentor is found this container is rendered -->
+  <BaseContainer v-else customClass="card-container">
+    <span>No mentors found</span>
+  </BaseContainer>
 </template>
 
 <script>
 import MentorItem from "./MentorItem.vue";
+import MentorsControlBar from "./MentorsControlBar.vue";
+
 export default {
-  components: { MentorItem },
+  components: { MentorItem, MentorsControlBar },
   computed: {
     getAllMentors() {
       return this.$store.getters["mentorsModule/getAllMentors"];
     },
+
+    hasMentors(){
+      return this.$store.getters['mentorsModule/hasMentors']
+    }
   },
 };
 </script>
 <style scoped>
-.card-container {
+.mentors-list {
   gap: 1rem;
-  width: 80vw;
   flex-wrap: wrap;
+  width:100%;
 }
 
-.card-container > * {
+.mentors-list  > * {
   flex: 1;
-  min-width: 25%;
-}
-
-.menu {
-  justify-content: space-between;
-  align-items: center;
-}
-.controls {
-  justify-content: end;
-  gap:0.75rem;
-}
-
-.styled-button{
-  background-color: #fdb652;
-  color:#1b1b1b
-}
-
-.styled-button:hover {
-  background: #FF9F1C;
-  color: #1B1B1B;
 }
 </style>

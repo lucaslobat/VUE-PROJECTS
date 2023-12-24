@@ -1,9 +1,13 @@
 <template>
   <BaseContainer customClass="card-item">
     <div class="name">{{ `${firstName} ${lastName}` }}</div>
+
+    <div class="areas">
+      <BaseBadge v-for="area in areas" :key="area">{{ area }}</BaseBadge>
+    </div>
+
     <div class="rate">{{ rate }}€ / hour</div>
     <div class="technologies">{{ technologies }}</div>
-    <div class="areas">{{ areas }}</div>
     <div class="controls">
       <BaseButton isRouterLink :toProp="detailsLink" customClass="styled-button"
         >Details</BaseButton
@@ -24,35 +28,35 @@ export default {
       return `${this.$route.path}/${this.id}`;
     },
     contactLink() {
-      return `${this.$route.path}/${this.id}/contact`;;
+      return `${this.$route.path}/${this.id}/contact`;
     },
-  },
+  }
 };
 </script>
 <style scoped>
 .card-item {
   flex-direction: column;
-  gap: 0.5rem;
-  max-width:30rem;
+  gap: 1rem;
+}
+
+.card-item > * {
+  flex:1;
 }
 
 .name {
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 10px;
-  color:#1B1B1B
+  color: #1b1b1b;
 }
 
 .biography {
   font-size: 14px;
-  margin-bottom: 10px;
 }
 
 .rate {
   font-size: 18px;
-  color: #FF9F1C;
+  color: #ff9f1c;
   font-weight: 600;
-  margin-bottom: 10px;
 }
 
 .technologies {

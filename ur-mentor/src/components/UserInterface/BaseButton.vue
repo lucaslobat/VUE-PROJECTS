@@ -38,6 +38,7 @@ export default {
   transition: background 0.3s, transform 0.3s;
   margin: 0.5rem 0.2rem;
   text-decoration: none;
+  background-color: #fdb652;
 }
 
 .styled-button:hover {

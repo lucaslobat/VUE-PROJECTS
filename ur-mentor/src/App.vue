@@ -1,14 +1,11 @@
 <template>
-  <Navbar></Navbar>
-  <RouterView></RouterView>
-  <Footer></Footer>
+  <MainLayout></MainLayout>
 </template>
 
 <script>
-import Navbar from "./components/Layout/Navbar.vue";
-import Footer from "./components/Layout/Footer.vue";
+import MainLayout from "./components/Layout/MainLayout.vue";
 export default {
-  components: { Navbar, Footer },
+  components: { MainLayout },
 };
 </script>
 
