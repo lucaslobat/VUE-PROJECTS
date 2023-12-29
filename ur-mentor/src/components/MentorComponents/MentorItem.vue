@@ -13,6 +13,7 @@
         :key="index"
         :class="getIconClass(tech)"
         class="colored"
+        :title="tech"
       ></i>
     </div>
     <div class="controls">
@@ -57,7 +58,7 @@ export default {
       } else if (lowerCasedTech === ".net") {
         return "devicon-dot-net-plain";
       } else if (lowerCasedTech === "python") {
-        return "devicon-python-plain";
+        return "devicon-python-plai";
       }
     },
   },
