@@ -1,10 +1,14 @@
 <template>
-  <RouterLink v-if="isRouterLink" :to="toProp" :class="customClass">
-    <slot></slot>
+  <RouterLink v-if="isRouterLink" :to="toProp">
+    <v-btn>
+      <slot></slot>
+    </v-btn>
   </RouterLink>
 
-  <a v-else :class="customClass">
-    <slot></slot>
+  <a v-else>
+    <v-btn>
+      <slot></slot>
+    </v-btn>
   </a>
 </template>
 <script>
@@ -14,11 +18,6 @@ export default {
       type: Boolean,
       required: false,
       default: false,
-    },
-    customClass: {
-      type: String,
-      required: false,
-      default: null,
     },
     toProp: {
       type: String,
@@ -30,8 +29,8 @@ export default {
 </script>
 <style scoped>
 .styled-button {
-  background:  #E4E4DE;
-  color: #1B1B1B;
+  background: #e4e4de;
+  color: #1b1b1b;
   border: none;
   padding: 0.5rem;
   cursor: pointer;
@@ -42,7 +41,7 @@ export default {
 }
 
 .styled-button:hover {
-  background: #FF9F1C;
-  color: #1B1B1B;
+  background: #ff9f1c;
+  color: #1b1b1b;
 }
 </style>

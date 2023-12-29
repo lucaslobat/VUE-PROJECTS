@@ -2,15 +2,11 @@
   <!-- Menu -->
   <BaseContainer customClass="card-container menu">
     <section>
-      <BaseButton :isRouterLink="false" customClass="styled-button"
-        >Filter</BaseButton
-      >
+      <BaseButton :isRouterLink="false">Filter</BaseButton>
     </section>
     <section class="flex">
-      <BaseButton :isRouterLink="false" customClass="styled-button"
-        >Refresh</BaseButton
-      >
-      <BaseButton isRouterLink customClass="styled-button" to="/registration"
+      <BaseButton :isRouterLink="false">Refresh</BaseButton>
+      <BaseButton isRouterLink to="/registration"
         >Register as a mentor
       </BaseButton>
     </section>

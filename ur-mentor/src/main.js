@@ -8,7 +8,6 @@ import "./style.css";
 import App from "./App.vue";
 import BaseContainer from "./components/UserInterface/BaseContainer.vue";
 import BaseButton from "./components/UserInterface/BaseButton.vue";
-import BaseBadge from "./components/UserInterface/BaseBadge.vue";
 
 /* Vuetify */
 import 'vuetify/styles'
@@ -28,9 +27,6 @@ const vuetify = createVuetify({components,directives});
 
 app.component("BaseContainer", BaseContainer);
 app.component("BaseButton", BaseButton);
-app.component("BaseBadge", BaseBadge);
-
-
 
 app.use(storeIndex);
 app.use(router);

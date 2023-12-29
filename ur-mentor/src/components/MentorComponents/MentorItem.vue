@@ -2,12 +2,12 @@
   <BaseContainer customClass="card-item">
     <div class="name">{{ `${firstName} ${lastName}` }}</div>
 
-    <div class="areas">
-      <BaseBadge v-for="area in areas" :key="area">{{ area }}</BaseBadge>
+    <div class="areas flex">
+      <v-chip v-for="area in areas" :key="area" color="primary">{{ area }}</v-chip>
     </div>
 
     <div class="rate">{{ rate }}€ / hour</div>
-    <div class="technologies">
+    <div class="technologies flex">
       <i
         v-for="(tech, index) in technologies"
         :key="index"
@@ -16,13 +16,9 @@
         :title="tech"
       ></i>
     </div>
-    <div class="controls">
-      <BaseButton isRouterLink :toProp="detailsLink" customClass="styled-button"
-        >Details</BaseButton
-      >
-      <BaseButton isRouterLink :toProp="contactLink" customClass="styled-button"
-        >Contact</BaseButton
-      >
+    <div class="controls flex">
+      <BaseButton isRouterLink :toProp="detailsLink">Details</BaseButton>
+      <BaseButton isRouterLink :toProp="contactLink">Contact</BaseButton>
     </div>
   </BaseContainer>
 </template>
@@ -44,22 +40,18 @@ export default {
   },
   methods: {
     getIconClass(tech) {
+      const techClassMapping = {
+        vue: "devicon-vuejs-plain",
+        javascript: "devicon-javascript-plain",
+        html: "devicon-html5-plain",
+        css: "devicon-css3-plain",
+        "c#": "devicon-csharp-plain",
+        ".net": "devicon-dot-net-plain",
+        python: "devicon-python-plai",
+      };
+
       const lowerCasedTech = tech.toLowerCase();
-      if (lowerCasedTech === "vue") {
-        return "devicon-vuejs-plain";
-      } else if (lowerCasedTech === "javascript") {
-        return "devicon-javascript-plain";
-      } else if (lowerCasedTech === "html") {
-        return "devicon-html5-plain";
-      } else if (lowerCasedTech === "css") {
-        return "devicon-css3-plain";
-      } else if (lowerCasedTech === "c#") {
-        return "devicon-csharp-plain";
-      } else if (lowerCasedTech === ".net") {
-        return "devicon-dot-net-plain";
-      } else if (lowerCasedTech === "python") {
-        return "devicon-python-plai";
-      }
+      return techClassMapping[lowerCasedTech] || "";
     },
   },
 };
@@ -75,14 +67,14 @@ export default {
   flex: 1;
 }
 
+.areas {
+  gap: 0.5em;
+}
+
 .name {
   font-size: 1.5em;
   font-weight: bold;
   color: #1b1b1b;
-}
-
-.biography {
-  font-size: 14px;
 }
 
 .rate {
@@ -93,9 +85,11 @@ export default {
 
 .technologies {
   font-size: 2rem;
+  gap: 0.2em;
 }
 
 .controls {
   margin: 1rem 0;
+  gap: 0.5em;
 }
 </style>
