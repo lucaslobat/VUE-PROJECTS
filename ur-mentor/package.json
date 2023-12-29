@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "devicon": "^2.15.1",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5",
+    "vuetify": "^3.4.9",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

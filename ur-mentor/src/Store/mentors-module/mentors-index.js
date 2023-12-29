@@ -15,7 +15,7 @@ const mentorModule = {
         biography:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.",
         rate: 15,
-        technologies: ["Vue.js", "Javascript", "HTML", "CSS"],
+        technologies: ["Vue", "Javascript", "HTML", "CSS"],
         areas: ["frontend"]
       },
       {
@@ -35,18 +35,18 @@ const mentorModule = {
         biography:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.",
         rate: 25,
-        technologies: ["Vue.js", "Javascript", "HTML", "CSS","C#", ".NET"],
+        technologies: ["Vue", "Javascript", "HTML", "CSS","C#", ".NET"],
         areas: ["backend","frontend"]
       },
       {
         id: 4,
-        firstName: "Lucas",
-        lastName: "Lobato",
+        firstName: "Tomas",
+        lastName: "Aguirre",
         biography:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.",
         rate: 25,
-        technologies: ["Vue.js", "Javascript", "HTML", "CSS","C#", ".NET"],
-        areas: ["backend","frontend"]
+        technologies: ["Javascript", "HTML", "CSS","C#", ".NET", 'Python'],
+        areas: ["backend"]
       }
     ],
   },

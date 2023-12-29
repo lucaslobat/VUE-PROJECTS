@@ -22,7 +22,6 @@ export default {
 .main-layout{
   display:flex;
   flex-direction: column;
-  border:0.2rem solid red;
   width:80vw;
   margin:0 auto;
   padding:1rem;
