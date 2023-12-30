@@ -1,12 +1,20 @@
 <template>
   <BaseContainer customClass="card-item">
-    <div class="name">{{ `${firstName} ${lastName}` }}</div>
+    <div class="name flex">
+      <v-avatar
+        image="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F550%2F731%2Foriginal%2Fuser-icon-vector.jpg&f=1&nofb=1&ipt=10921ac26c6b6b932dd74c33a1fe3c968cb3e2dc8fce6db4a823edbf18d82cd1&ipo=images"
+      >
+      </v-avatar>
 
-    <div class="areas flex">
-      <v-chip v-for="area in areas" :key="area" color="primary">{{ area }}</v-chip>
+      <h4>{{ getFullName }}</h4>
     </div>
 
-    <div class="rate">{{ rate }}€ / hour</div>
+    <div class="areas flex">
+      <v-chip v-for="area in areas" :key="area" color="primary">{{
+        area
+      }}</v-chip>
+    </div>
+
     <div class="technologies flex">
       <i
         v-for="(tech, index) in technologies"
@@ -16,6 +24,8 @@
         :title="tech"
       ></i>
     </div>
+
+    <div class="rate">{{ rate }}€ / hour</div>
     <div class="controls flex">
       <BaseButton isRouterLink :toProp="detailsLink">Details</BaseButton>
       <BaseButton isRouterLink :toProp="contactLink">Contact</BaseButton>
@@ -37,11 +47,14 @@ export default {
     contactLink() {
       return `${this.$route.path}/${this.id}/contact`;
     },
+    getFullName() {
+      return `${this.firstName} ${this.lastName}`;
+    },
   },
   methods: {
     getIconClass(tech) {
       const techClassMapping = {
-        vue: "devicon-vuejs-plain",
+        vue: "devicon-vuejs-plain vue",
         javascript: "devicon-javascript-plain",
         html: "devicon-html5-plain",
         css: "devicon-css3-plain",
@@ -75,6 +88,7 @@ export default {
   font-size: 1.5em;
   font-weight: bold;
   color: #1b1b1b;
+  gap: 0.5em;
 }
 
 .rate {
