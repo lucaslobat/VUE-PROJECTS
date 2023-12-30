@@ -12,7 +12,7 @@ const mentorModule = {
         id: 1,
         firstName: "Julian",
         lastName: "Casas",
-        biography:
+        about:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.",
         rate: 15,
         technologies: ["Vue", "Javascript", "HTML", "CSS"],
@@ -22,7 +22,7 @@ const mentorModule = {
         id: 2,
         firstName: "Timothy",
         lastName: "White",
-        biography:
+        about:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.",
         rate: 15,
         technologies: ["C#", ".NET"],
@@ -32,7 +32,7 @@ const mentorModule = {
         id: 3,
         firstName: "Lucas",
         lastName: "Lobato",
-        biography:
+        about:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.",
         rate: 25,
         technologies: ["Vue", "Javascript", "HTML", "CSS","C#", ".NET"],
@@ -42,7 +42,7 @@ const mentorModule = {
         id: 4,
         firstName: "Tomas",
         lastName: "Aguirre",
-        biography:
+        about:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.",
         rate: 25,
         technologies: ["Javascript", "HTML", "CSS","C#", ".NET", 'Python'],
