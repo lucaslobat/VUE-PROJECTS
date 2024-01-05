@@ -18,13 +18,18 @@ export default {};
 </script>
 
 <style scoped>
+@media (width > 768px) {
+  .menu {
+    width: 100%;
+  }
+}
 .menu {
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-.right-buttons{
-  gap:0.5em;
+.right-buttons {
+  gap: 0.5em;
 }
 </style>

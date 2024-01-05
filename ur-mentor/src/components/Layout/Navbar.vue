@@ -1,19 +1,21 @@
 <template>
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <RouterLink to="/">urMentor</RouterLink>
+  <nav class="navbar flex">
+    <div class="navbar-content flex">
+      <div class="navbar-logo">
+        <RouterLink to="/">urMentor</RouterLink>
+      </div>
+      <ul class="navbar-links">
+        <li>
+          <RouterLink to="/">Home</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/mentors">Mentors</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/requests">Requests</RouterLink>
+        </li>
+      </ul>
     </div>
-    <ul class="navbar-links">
-      <li>
-        <RouterLink to="/">Home</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/mentors">Mentors</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/requests">Requests</RouterLink>
-      </li>
-    </ul>
   </nav>
 </template>
 <script></script>
@@ -21,11 +23,19 @@
 .navbar {
   background-color: #1b1b1b;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1.5rem;
-  width:100%
+  width: 100%;
+  top: 0;
+  position: sticky;
+  z-index: 1;
+}
+
+.navbar-content {
+  justify-content: space-between;
+  align-items: center;
+  gap:4em;
 }
 
 .navbar-logo a {
@@ -53,6 +63,13 @@
 a:active,
 a.router-link-active,
 .navbar-links a:hover {
-  color: #FF9F1C;
+  color: #ff9f1c;
+}
+
+@media (width < 431px) {
+  .navbar-content {
+    gap:2em;
+    max-width: 100vw;
+  }
 }
 </style>

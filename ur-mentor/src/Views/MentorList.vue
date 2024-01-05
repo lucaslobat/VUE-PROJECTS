@@ -1,6 +1,6 @@
 <template>
   <!-- Control Bar -->
-  <MentorsControlBar/>
+  <!-- <MentorsControlBar/> -->
 
   <!-- MentorItems list -->
   <BaseContainer v-if="hasMentors" customClass="card-container mentors-list">

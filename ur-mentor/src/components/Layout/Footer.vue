@@ -7,10 +7,9 @@
         </div>
         <div>
           <ul class="social-icons">
-            <li><a href="#" target="_blank">Facebook</a></li>
-            <li><a href="#" target="_blank">Twitter</a></li>
-            <li><a href="#" target="_blank">Instagram</a></li>
-            <!-- Add more social icons as needed -->
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
           </ul>
         </div>
       </div>
@@ -24,11 +23,7 @@
 footer {
   background-color: #1b1b1b;
   color: #fff;
-  padding: 20px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  padding: 1.5em;
 }
 
 .footer-content {
@@ -53,4 +48,5 @@ footer {
   color: #fff;
   font-size: 18px;
 }
+
 </style>

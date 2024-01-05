@@ -1,14 +1,16 @@
 <template>
+  <div class="root-container flex">
     <!-- Navbar -->
-  <Navbar />
+    <Navbar />
 
-  <!-- Main container -->
-  <main class="main-layout">
-    <RouterView></RouterView>
-  </main>
+    <!-- Main container -->
+    <main class="main-layout flex">
+      <RouterView></RouterView>
+    </main>
 
-  <!-- Footer -->
-  <Footer />
+    <!-- Footer -->
+    <Footer />
+  </div>
 </template>
 <script>
 import Navbar from "./Navbar.vue";
@@ -19,11 +21,14 @@ export default {
 };
 </script>
 <style scoped>
-.main-layout{
-  display:flex;
+.root-container {
   flex-direction: column;
-  width:80vw;
-  margin:0 auto;
-  padding:1rem;
+  height: 100vh;
+}
+.main-layout {
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1rem;
+  flex:1;
 }
 </style>
