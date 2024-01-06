@@ -74,6 +74,7 @@ export default {
   flex-direction: column;
   gap: 1rem;
   border-radius: 1em;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 
 .card-item > * {

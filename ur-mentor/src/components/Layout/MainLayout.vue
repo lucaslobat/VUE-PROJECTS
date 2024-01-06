@@ -23,12 +23,12 @@ export default {
 <style scoped>
 .root-container {
   flex-direction: column;
+  align-items: center;
   height: 100vh;
 }
 .main-layout {
   flex-direction: column;
-  margin: 0 auto;
-  padding: 1rem;
   flex:1;
+  width:80vw;
 }
 </style>

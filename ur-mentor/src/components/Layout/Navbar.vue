@@ -36,6 +36,7 @@
   justify-content: space-between;
   align-items: center;
   gap:4em;
+  width:80vw;
 }
 
 .navbar-logo a {
@@ -66,10 +67,10 @@ a.router-link-active,
   color: #ff9f1c;
 }
 
-@media (width < 431px) {
+@media (width <= 412px) {
   .navbar-content {
     gap:2em;
-    max-width: 100vw;
+    max-width: 100%
   }
 }
 </style>
