@@ -3,7 +3,7 @@
     <div class="mentor-details flex">
       <div class="area-badges">
         <v-chip
-          v-for="area in identifiedUser.areas"
+          v-for="area in identifiedMentor.areas"
           :key="area"
           color="primary"
           >{{ area }}</v-chip
@@ -11,7 +11,7 @@
       </div>
       <div class="about">
         <h2>About</h2>
-        <p>{{ identifiedUser.about }}</p>
+        <p>{{ identifiedMentor.about }}</p>
       </div>
     </div>
 
@@ -23,11 +23,13 @@
         ></v-img>
       </v-avatar>
 
-      <h4>{{ `${identifiedUser.firstName} ${identifiedUser.lastName}` }}</h4>
+      <h4>
+        {{ `${identifiedMentor.firstName} ${identifiedMentor.lastName}` }}
+      </h4>
 
       <div class="card-details flex">
         <span>Hourly rate</span>
-        <span>{{ identifiedUser.rate }}€</span>
+        <span>{{ identifiedMentor.rate }}€</span>
       </div>
       <div class="card-details flex">
         <span>Average response</span>
@@ -42,23 +44,9 @@
 </template>
 <script>
 export default {
-  methods: {
-    getAllMentors() {
-      return this.$store.getters["mentorsModule/getAllMentors"];
-    },
-
-    getIdentifiedUser(param) {
-      const allFetchedMentors = this.getAllMentors();
-      const identifiedMentor = allFetchedMentors.find(
-        (mentor) => mentor.id == param
-      );
-
-      return identifiedMentor || "";
-    },
-  },
   computed: {
-    identifiedUser() {
-      return this.getIdentifiedUser(this.$route.params.id);
+    identifiedMentor() {
+      return this.$store.getters[`mentorsModule/getMentorById`](this.$route.params.id);
     },
   },
 };
@@ -74,10 +62,10 @@ export default {
 .mentor-details {
   flex-direction: column;
   gap: 1em;
-  max-width: 60%;
+  max-width: 40%;
   border-radius: 0.5em;
   padding: 1em;
-  background-color: #FFF8EF;
+  background-color: #fff8ef;
 }
 
 .mentor-card {
@@ -87,11 +75,11 @@ export default {
   padding: 1em;
   min-width: 20%;
   border-radius: 0.5em;
-  background-color: #FFF8EF;
+  background-color: #fff8ef;
 }
 
-.card-details{
+.card-details {
   justify-content: space-between;
-  width:100%;
+  width: 100%;
 }
 </style>

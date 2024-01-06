@@ -33,10 +33,9 @@ export default {
     getAllMentors() {
       return this.$store.getters["mentorsModule/getAllMentors"];
     },
-
     hasMentors(){
       return this.$store.getters['mentorsModule/hasMentors']
-    }
+    }    
   },
 };
 </script>

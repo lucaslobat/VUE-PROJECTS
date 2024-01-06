@@ -41,7 +41,8 @@ export default {
   },
   computed: {
     detailsLink() {
-      /* Grab the current route and concatenate the id prop. This is useful in case we ever change the route definition in our router.js */
+      /* Grab the current route and concatenate the 'id' prop.
+      This is useful in case we ever change the route definition in our router.js */
       return `${this.$route.path}/${this.id}`;
     },
     contactLink() {
