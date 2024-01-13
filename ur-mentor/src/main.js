@@ -17,23 +17,17 @@ import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
 /* FontAwesome */
-/* import the fontawesome core */
 import { library } from "@fortawesome/fontawesome-svg-core";
-
-/* import font awesome icon component */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-
-/* import specific icons */
-import { faUserSecret, faHouse } from "@fortawesome/free-solid-svg-icons";
-
-/* add icons to the library */
-library.add(faUserSecret, faHouse);
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
 /* Store */
 import storeIndex from "./Store/store-index";
 
 /* Router */
 import router from "./Routes/router.js";
+
+
 
 const app = createApp(App);
 const vuetify = createVuetify({
@@ -48,9 +42,11 @@ const vuetify = createVuetify({
   },
 });
 
+library.add(fas);
+
 app.component("BaseContainer", BaseContainer);
 app.component("BaseButton", BaseButton);
-app.component("font-awesome-icon", FontAwesomeIcon);
+app.component("FontAwesomeIcon", FontAwesomeIcon);
 
 app.use(storeIndex);
 app.use(router);
