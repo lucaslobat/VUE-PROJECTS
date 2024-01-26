@@ -4,3 +4,5 @@ This project is a responsive web app which consumes the API SerpAp that scrapes 
 
 ## Dependencies
 - SerpAp (https://serpapi.com/dashboard)
+- Material Design Icons
+- Vuetify 3
