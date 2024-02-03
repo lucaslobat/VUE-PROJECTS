@@ -6,15 +6,12 @@
 
 <template>
   <div class="d-flex flex-column">
-    <span class="location-text text-uppercase font-weight-bold mb-5">Language</span>
+    <div class="d-flex align-center ga-2 buttons-div">
+      <v-icon icon="mdi-translate" size="small" color="#282538" />
+      <span class="location-text text-uppercase font-weight-bold">Language </span>
+    </div>
 
-    <CustomInput placeholder="">
-      <template v-slot:inputIcon>
-        <v-icon icon="mdi-translate" size="small" color="#B9BDCF" />
-      </template>
-    </CustomInput>
-
-    <v-radio-group v-model="radioButtonValue" class="mt-5">
+    <v-radio-group v-model="radioButtonValue" class="mt-2">
       <v-radio label="English" value="english"></v-radio>
       <v-radio label="Spanish" value="spanish"></v-radio>
       <v-radio label="Portuguese" value="portuguese"></v-radio>
@@ -36,9 +33,8 @@ export default {
 
 <style scoped>
 .location-text {
-  color: #B9BDCF;
+  color: var(--text-color)
 }
-
 .fake-input {
   background-color: white;
   border-radius: 0.2em;

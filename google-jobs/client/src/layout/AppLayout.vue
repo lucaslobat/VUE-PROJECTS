@@ -45,13 +45,27 @@
 import LanguageSearch from "../components/LanguageSearch.vue";
 import searchCardImage from "../assets/search-card-image.png";
 import CustomInput from "../components/CustomInput.vue";
+import axios from "axios";
 export default {
-  name: "",
   components: { LanguageSearch, CustomInput },
   data() {
     return {
       searchCardImage,
+      restData: null,
     };
+  },
+  async created() {
+    const locallyStoredData = localStorage.getItem("scholarDocuments");
+    if (locallyStoredData) {
+      this.restData = JSON.parse(locallyStoredData);
+      console.log(this.restData.data);
+    } else {
+      const response = await axios.get("http://localhost:3000/api")
+      this.restData = response.data;
+      localStorage.setItem('scholarDocuments',JSON.stringify(this.restData));
+      console.log(this.restData);
+
+    }
   },
 };
 </script>
@@ -78,7 +92,7 @@ export default {
 }
 .input-container {
   background-image: url("../assets/search-card-image.png");
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
