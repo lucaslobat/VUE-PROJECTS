@@ -7,8 +7,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* 1. Text and background */
   --background-color: #f6f7fb;
-  --title-color: #282538;
+  --text-color: #282538;
+
+  /* 2. Primary is for CTA's and sections. Secondary is for less important sections and info cards */
+  --primary-color: #5BB9A0;
+  --secondary-color: #93D5C4;
+  
+  /* 3. Accent color is an additional color. It appears in images, highlights, hyperlinks, boxes, cards, etc. */
+  --accent-color: #77CEB7;
 }
 
 * {
@@ -19,4 +27,5 @@
 
 #root-app {
   background-color: var(--background-color);
+  height:100vh;
 }
