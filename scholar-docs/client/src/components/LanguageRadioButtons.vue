@@ -8,7 +8,9 @@
   <div class="d-flex flex-column">
     <div class="d-flex align-center ga-2 buttons-div">
       <v-icon icon="mdi-translate" size="small" color="#282538" />
-      <span class="location-text text-uppercase font-weight-bold">Language </span>
+      <span class="location-text text-uppercase font-weight-bold"
+        >Language
+      </span>
     </div>
 
     <v-radio-group v-model="radioButtonValue" class="mt-2">
@@ -22,18 +24,25 @@
 
 <script>
 export default {
-    data() {
-        return {
-            isFulltimeSelected: false,
-            radioButtonValue: "",
-        }
-    }
+  data() {
+    return {
+      radioButtonValue: "english",
+    };
+  },
+  watch: {
+    radioButtonValue() {
+      this.$emit("radioButtonValue", this.radioButtonValue);
+    },
+  },
+  mounted() {
+    this.$emit("radioButtonValue", this.radioButtonValue);
+  },
 };
 </script>
 
 <style scoped>
 .location-text {
-  color: var(--text-color)
+  color: var(--text-color);
 }
 .fake-input {
   background-color: white;
