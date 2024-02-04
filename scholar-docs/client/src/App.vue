@@ -11,14 +11,8 @@
   </AppLayout>
 </template>
 
-<script>
+<script setup>
 import DocumentSearch from "./views/DocumentSearch.vue";
-export default {
-  components: { DocumentSearch },
-  data() {
-    return {};
-  },
-};
 </script>
 
 <style scoped>

@@ -6,17 +6,9 @@
         <CustomInput
           @initiateSearch="initiateSearchHandler"
           placeholder="Article, book or webpage"
+          prependIcon="mdi-file-document-outline"
+          appendIcon="mdi-magnify"
         >
-          <template v-slot:inputIcon>
-            <v-icon
-              icon="mdi-file-document-outline"
-              size="small"
-              color="#B9BDCF"
-            />
-          </template>
-          <template v-slot:searchButton>
-            <v-btn icon="mdi-magnify" size="small"> </v-btn>
-          </template>
         </CustomInput>
       </v-card>
     </v-col>
@@ -24,35 +16,30 @@
 
   <v-row class="second-row d-flex justify-center">
     <v-col class="sidebar" cols="12" xs="12" sm="12" md="8" lg="2">
-      <LanguageRadioButtons @radioButtonValue="radioButtonvalueHandler" />
+      <LanguageRadioButtons @emitRadioButtonValue="radioButtonValueHandler" />
     </v-col>
 
     <v-col class="main-content" cols="12" xs="12" sm="12" md="8" lg="6">
-      <DocumentList/>
+      <DocumentList />
     </v-col>
   </v-row>
 </template>
 
-<script>
+<script setup>
+import { ref } from "vue";
 import LanguageRadioButtons from "../components/LanguageRadioButtons.vue";
 import DocumentList from "../components/DocumentList.vue";
-export default {
-  components: { LanguageRadioButtons, DocumentList },
-  data(){
-    return {
-        searchOptions: {inputValue: "", language: ""}
-    }
-  },
-  methods: {
-    initiateSearchHandler(inputValue) {
-      this.searchOptions.inputValue = inputValue;
-      console.log(this.searchOptions)
-    },
-    radioButtonvalueHandler(radioButtonValue) {
-        this.searchOptions.language = radioButtonValue;
-    },
-  },
+
+const searchOptions = ref({inputValue: "", language: "",});
+
+const initiateSearchHandler = (inputValue) => {
+  searchOptions.value.inputValue = inputValue;
+  console.log(searchOptions.value);
 };
+
+const radioButtonValueHandler = (radioButtonValue) => {
+  searchOptions.value.language = radioButtonValue;
+}
 </script>
 
 <style scoped>
@@ -62,7 +49,7 @@ export default {
 }
 .input-container {
   background-image: url("../assets/search-card-image.png");
-  background-size:auto;
+  background-size: auto;
   background-repeat: no-repeat;
 }
 </style>

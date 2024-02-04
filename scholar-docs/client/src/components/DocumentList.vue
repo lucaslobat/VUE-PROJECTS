@@ -10,11 +10,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import DocumentItem from "./DocumentItem.vue";
-export default {
-  components: { DocumentItem },
-};
 </script>
 
 <style scoped></style>

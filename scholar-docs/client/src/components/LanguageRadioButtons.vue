@@ -22,22 +22,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      radioButtonValue: "english",
-    };
-  },
-  watch: {
-    radioButtonValue() {
-      this.$emit("radioButtonValue", this.radioButtonValue);
-    },
-  },
-  mounted() {
-    this.$emit("radioButtonValue", this.radioButtonValue);
-  },
-};
+<script setup>
+import { ref, watchEffect, onMounted } from "vue";
+const emits = defineEmits(['emitRadioButtonValue']);
+const radioButtonValue = ref("english");
+
+watchEffect(() => {
+  if (radioButtonValue) {
+    emits("emitRadioButtonValue", radioButtonValue.value);
+  }
+});
+
+onMounted(() => {
+  emits("emitRadioButtonValue", radioButtonValue.value);
+});
+
 </script>
 
 <style scoped>

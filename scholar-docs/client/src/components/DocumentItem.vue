@@ -6,10 +6,8 @@
   </v-card>
 </template>
 
-<script>
-export default {
-    props:['title','subtitle','text']
-};
+<script setup>
+const props = defineProps(['title','subtitle','text'])
 </script>
 
 <style scoped></style>
