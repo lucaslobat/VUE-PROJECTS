@@ -5,7 +5,7 @@
       <Header />
     </template>
 
-    <template v-slot:bodyView>
+    <template v-slot:body>
       <DocumentSearch/>
     </template>
   </AppLayout>

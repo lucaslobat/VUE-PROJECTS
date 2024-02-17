@@ -1,14 +1,18 @@
 <template>
   <v-container class="app-container">
-    <slot name="header"></slot>
+    <!-- Header -->
+    <v-row class="d-flex justify-center">
+      <v-col class="header" cols="12" xs="12" sm="12" md="8" lg="8">
+        <slot name="header"></slot>
+      </v-col>
+    </v-row>
 
     <!-- Body -->
-    <slot name="bodyView"> </slot>
+    <slot name="body"> </slot>
   </v-container>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .sidebar {

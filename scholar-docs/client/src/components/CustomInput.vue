@@ -15,11 +15,7 @@
     />
 
     <slot name="searchButton">
-      <v-btn
-        @click="initiateSearch"
-        :icon="appendIcon"
-        size="small">
-        </v-btn>
+      <v-btn @click="initiateSearch" :icon="appendIcon" size="small"> </v-btn>
     </slot>
   </div>
 </template>
@@ -27,14 +23,14 @@
 <script setup>
 import { ref } from "vue";
 
-const props = defineProps(['placeholder', 'prependIcon', 'appendIcon']);
-const emits = defineEmits(['initiateSearch']);
+const props = defineProps(["placeholder", "prependIcon", "appendIcon"]);
+const emits = defineEmits(["initiateSearch"]);
 
 const inputText = ref("");
 
 const initiateSearch = () => {
-  emits('initiateSearch',inputText.value)
-    inputText.value = "";
+  emits("initiateSearch", inputText.value);
+  inputText.value = "";
 };
 </script>
 

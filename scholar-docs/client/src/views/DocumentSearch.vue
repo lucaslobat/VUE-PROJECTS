@@ -15,10 +15,12 @@
   </v-row>
 
   <v-row class="second-row d-flex justify-center">
+    <!-- Sidebar -->
     <v-col class="sidebar" cols="12" xs="12" sm="12" md="8" lg="2">
       <LanguageRadioButtons @emitRadioButtonValue="radioButtonValueHandler" />
     </v-col>
 
+    <!-- Main -->
     <v-col class="main-content" cols="12" xs="12" sm="12" md="8" lg="6">
       <DocumentList />
     </v-col>
@@ -28,7 +30,7 @@
 <script setup>
 import { ref } from "vue";
 import LanguageRadioButtons from "../components/LanguageRadioButtons.vue";
-import DocumentList from "../components/DocumentList.vue";
+import DocumentList from "./DocumentList.vue";
 
 const searchOptions = ref({inputValue: "", language: "",});
 
